@@ -1,7 +1,7 @@
 {
     "name": "webeweb/types-library",
     "type": "library",
-    "description": "",
+    "description": "Types utilities",
     "keywords": [
         "array",
         "boolean",
