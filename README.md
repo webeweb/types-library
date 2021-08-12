@@ -9,7 +9,7 @@ types-library
 [![License](https://img.shields.io/packagist/l/webeweb/types-library.svg?style=flat-square)](https://packagist.org/packages/webeweb/types-library)
 [![composer.lock](https://img.shields.io/badge/.lock-uncommited-important.svg?style=flat-square)](https://packagist.org/packages/webeweb/types-library)
 
-Types utilities
+Types utilities.
 
 If you like this package, pay me a beer (or a coffee)
 [![paypal.me](https://img.shields.io/badge/paypal.me-webeweb-0070ba.svg?style=flat-square&logo=paypal)](https://www.paypal.me/webeweb)
