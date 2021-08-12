@@ -49,6 +49,37 @@ class StringHelper {
     }
 
     /**
+     * File size.
+     *
+     * @param int|null $size The size.
+     * @param int $decimals The decimals.
+     * @return string Returns the file size.
+     */
+    public static function fileSize(?int $size, int $decimals = 2): string {
+
+        if (null === $size || $size < 0 || $decimals < 0) {
+            return "";
+        }
+
+        $format = "%.{$decimals}f";
+        $sizes  = [
+            "Tio" => pow(1024, 4),
+            "Gio" => pow(1024, 3),
+            "Mio" => pow(1024, 2),
+            "Kio" => pow(1024, 1),
+        ];
+
+        foreach ($sizes as $k => $v) {
+
+            if ($v <= $size) {
+                return sprintf("$format $k", $size / $v);
+            }
+        }
+
+        return "";
+    }
+
+    /**
      * Determines if a value is a string.
      *
      * @param mixed $value The value.

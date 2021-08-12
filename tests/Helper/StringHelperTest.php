@@ -47,6 +47,25 @@ class StringHelperTest extends AbstractTestCase {
     }
 
     /**
+     * Tests the fileSize() method.
+     *
+     * @return void
+     */
+    public function testFileSize(): void {
+
+        $this->assertEquals("", StringHelper::fileSize(null));
+        $this->assertEquals("", StringHelper::fileSize(-1));
+        $this->assertEquals("", StringHelper::fileSize(1, -1));
+
+        $this->assertRegExp("/^1[\.,]00 Kio$/", StringHelper::fileSize(1024));
+        $this->assertRegExp("/^1[\.,]00 Mio$/", StringHelper::fileSize(1048576));
+        $this->assertRegExp("/^1[\.,]00 Gio$/", StringHelper::fileSize(1073741842));
+        $this->assertRegExp("/^1[\.,]00 Tio$/", StringHelper::fileSize(1099511627776));
+
+        $this->assertRegExp("/^1[\.,]000 Tio$/", StringHelper::fileSize(1099511627776, 3));
+    }
+
+    /**
      * Tests the parseArray() method.
      *
      * @return void
